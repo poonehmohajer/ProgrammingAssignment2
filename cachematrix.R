@@ -1,9 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## We create a special matrix which can cache its inverse 
+##
 
-## Write a short comment describing this function
+## using matlib library for inverse computation
 library(matlib)
 
+## this function makes the special matrix for us with setter and getter for the matrix and its inverse
 makeCacheMatrix <- function(x = matrix()) {
     m_inv <- NULL
     get <- function() x
@@ -19,8 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## returns the inverse of matrix from cache if exists else compute the inverse and set the cached inverse
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   inverse <- x$getInverse()
