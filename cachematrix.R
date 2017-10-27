@@ -1,8 +1,6 @@
 ## We create a special matrix which can cache its inverse 
 ##
 
-## using matlib library for inverse computation
-library(matlib)
 
 ## this function makes the special matrix for us with setter and getter for the matrix and its inverse
 makeCacheMatrix <- function(x = matrix()) {
@@ -25,7 +23,7 @@ cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   inverse <- x$getInverse()
   if(is.null(inverse)){
-    invt <- inv(x$get())
+    invt <- solve(x$get())
     x$setInverse(invt)
   }
   x$getInverse()
